@@ -16,7 +16,7 @@ export async function GET(
   const siteUrl =
     process.env.NEXT_PUBLIC_SITE_URL ||
     process.env.NEXT_PUBLIC_DOCS_BASE_URL ||
-    'http://localhost:3000';
+    'https://voux-docs.vercel.app';
   const logoUrl = new URL('/assets/logo.png', siteUrl).toString();
 
   return new ImageResponse(
