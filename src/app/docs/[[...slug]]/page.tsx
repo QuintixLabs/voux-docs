@@ -29,7 +29,6 @@ export default async function Page(props: PageProps<'/docs/[[...slug]]'>) {
       owner: EDIT_REPO_OWNER,
       repo: EDIT_REPO_NAME,
       path: editPath,
-      branch: EDIT_REPO_BRANCH,
     });
     if (lastEdit) {
       lastUpdate = lastEdit;
