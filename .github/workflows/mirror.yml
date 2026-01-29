@@ -16,4 +16,4 @@ jobs:
       - name: Push to mirror
         run: |
           git remote add mirror https://x-access-token:${{ secrets.MIRROR_TOKEN }}@github.com/fr0st-iwnl/voux-docs-mirror.git
-          git push mirror main --force
+          git push mirror master --force
