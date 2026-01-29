@@ -1,0 +1,74 @@
+---
+title: Counters
+description: How counters work and how to customize them.
+icon: Hash
+---
+
+---
+
+
+## Overview
+
+The counter is the main feature of **Voux**. It simply counts views.
+
+You can create a counter either from the main page **(if the instance is public)** or from the dashboard if you are logged in.
+
+When creating a counter, you can choose between two modes:
+
+### Unique
+
+**This mode counts only one visit per IP.**
+
+If the same IP visits the page again, it will not increase the counter.
+This is useful if you want something closer to **"real"** visitors.
+
+### Every-visit
+
+**This mode counts every page load.**
+
+Refreshing the page will increase the counter each time, depending on the throttle setting.
+By default, the throttle is `0s`, meaning every refresh counts.
+
+You can think of this like an old-school hit counter from early web days.
+
+After creating a counter, Voux gives you a small embed script.
+Once you place it on your website, views will start counting automatically.
+
+<strong>From the dashboard, you can also edit counters, add notes, and use filters to manage them.</strong>
+
+---
+
+## Styling your counter
+
+Styling your counter with **Voux** is super simple.  
+All you need to do is wrap the embed script inside an element.
+
+Here is a basic example using a `<span>`:
+
+```html title="HTML"
+<span class="counter-widget">
+  <!-- replace this with your counter script -->
+  <script async src="https://your-domain/embed/abc123.js"></script>
+</span>
+```
+
+Once that is in place, you can style it however you want using normal CSS.
+
+Here is a simple example that centers the counter on the screen and makes the text black:
+
+```css title="CSS"
+.counter-widget {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: black;
+  font-weight: 600;
+  font-size: 3rem;
+  font-family: system-ui, sans-serif;
+}
+```
+
+That is it. Your counter is now styled and ready to use.
+You can change the **font**, **colors**, **size**, or **layout** however you like.

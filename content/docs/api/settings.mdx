@@ -1,0 +1,74 @@
+---
+title: Settings API
+description: Read and update runtime settings.
+icon: Wrench
+---
+
+---
+
+These are the same settings you see on the Settings page.
+
+## Read settings
+
+- `GET /api/settings` — **[Admin]**
+
+**Example response**
+
+```json title="JSON"
+{
+  "config": {
+    "privateMode": false,
+    "showGuides": true,
+    "homeTitle": "Voux · Simple Free & Open Source Hit Counter...",
+    "brandName": "Voux",
+    "allowedModes": { "unique": true, "unlimited": true },
+    "unlimitedThrottleSeconds": 0,
+    "theme": "default"
+  },
+  "version": "2.0.6",
+  "usersPageSize": 4
+}
+```
+
+## Update settings
+
+- `POST /api/settings` — **[Admin]**
+
+You can update:
+
+- `privateMode`
+- `showGuides`
+- `homeTitle`
+- `brandName`
+- `allowedModes`
+- `unlimitedThrottleSeconds`
+- `theme`
+
+**Example request**
+
+```json title="JSON"
+{
+  "privateMode": true,
+  "showGuides": false,
+  "brandName": "My Voux",
+  "allowedModes": { "unique": true, "unlimited": false },
+  "unlimitedThrottleSeconds": 10,
+  "theme": "ocean"
+}
+```
+
+**Example response**
+
+```json title="JSON"
+{
+  "config": {
+    "privateMode": true,
+    "showGuides": false,
+    "brandName": "My Voux",
+    "allowedModes": { "unique": true, "unlimited": false },
+    "unlimitedThrottleSeconds": 10,
+    "theme": "ocean"
+  },
+  "version": "2.0.6"
+}
+```

@@ -1,0 +1,77 @@
+---
+title: Settings
+description: Configure your instance.
+icon: Settings
+---
+
+---
+
+
+## Overview
+
+This page covers the settings that change how your **Voux** instance behaves.
+Most options are self explanatory in the UI, so only the important ones are explained here.
+
+---
+
+## Public vs Private instance
+
+When **Private mode** is enabled, only logged in users can create new counters.
+When it is **disabled**, anyone can create counters.
+
+**Private mode is useful if:**
+- Your Voux instance is publicly accessible
+- You want to prevent abuse
+- You only want trusted users creating counters
+
+---
+
+## Every visit throttle
+
+This setting is only for counters using **Every-visit** mode.
+
+In simple terms, it controls how often the same person can increase the counter.
+
+For example, if you set the throttle to **10 seconds**:
+- You refresh the page once → the counter goes up by **1**
+- You refresh again within those **10** seconds → it does **not** count
+- Once the **10** seconds pass → the next visit counts again
+
+This helps stop spammy refreshes, accidental double counts, and bots hammering the same page.
+
+If you set the value to `0`, throttling is disabled and every refresh is counted.
+
+
+---
+
+## Delete counters inactive for 30 days
+
+This option lets you automatically delete counters that have not received any hits
+for a certain number of days.
+
+If a counter stays inactive for **30 days**, it will first show an **INACTIVE 30D** badge in the dashboard.
+This lets you see which counters are no longer being used before they are deleted.
+
+It is useful if:
+- You run a public instance
+- You want to keep the dashboard clean
+- You do not care about old, unused counters
+
+Counters that are still receiving hits are never affected.
+
+---
+
+## Backup & Restore
+
+Voux lets you back up your counters so you do not lose your data.
+
+You can download a backup of your counters as a **JSON** file from the dashboard.
+The backup includes everything you see in the dashboard: values, notes, labels, tags, and other related data.
+
+Restoring a backup will recreate the counters from the file.
+This is useful if you:
+- Move Voux to a new server
+- Reinstall the app
+- Accidentally delete counters
+
+It is a good idea to download a backup once in a while, **especially before updating Voux**.

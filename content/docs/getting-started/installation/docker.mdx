@@ -1,0 +1,59 @@
+---
+title: 🐋 Docker
+description: Run Voux with Docker.
+---
+
+---
+
+## Docker Run
+
+You can run Voux directly with Docker using a single command:
+
+```bash title="Terminal"
+docker run -d \
+  --name voux \
+  -p 8787:8787 \
+  -e ADMIN_USERNAME=admin \
+  -e ADMIN_PASSWORD=change-this-password \
+  -v $(pwd)/data:/app/data \
+  ghcr.io/quintixlabs/voux/voux:latest
+```
+
+<Callout title="Read this first" type="warning">
+You must set `ADMIN_USERNAME` and `ADMIN_PASSWORD` to your own values.
+Do not leave the example credentials.
+</Callout>
+
+---
+
+## Docker Compose
+
+If you prefer **Docker Compose**, this is the simpler and recommended option for long running setups.
+
+Create a `docker-compose.yml` file:
+
+```yaml title="docker-compose.yml"
+services:
+  voux:
+    image: ghcr.io/quintixlabs/voux/voux:latest
+    container_name: voux # remove this if u wanna run more than 1 container
+    ports:
+      - "8787:8787"
+    environment:
+      - ADMIN_USERNAME=admin
+      - ADMIN_PASSWORD=change-this-password
+    volumes:
+      - ./data:/app/data
+```
+
+<Callout title="Read this first" type="warning">
+You must set `ADMIN_USERNAME` and `ADMIN_PASSWORD` to your own values.
+Do not leave the example credentials.
+</Callout>
+
+
+Then start it:
+
+```bash title="Terminal"
+docker compose up -d
+```

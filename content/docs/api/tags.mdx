@@ -1,0 +1,70 @@
+---
+title: Tags
+description: Create and use colored tags.
+icon: Tag
+---
+
+---
+
+Tags let you group counters and filter the dashboard.
+
+## List tags
+
+- `GET /api/tags` — **[Admin / Member]**
+
+**Example response**
+
+```json title="JSON"
+{
+  "tags": [
+    { "id": "tag_abc", "name": "Articles", "color": "#ff8800" },
+    { "id": "tag_xyz", "name": "Docs", "color": "#4c6ef5" }
+  ]
+}
+```
+
+## Create tag
+
+- `POST /api/tags` — **[Admin]**
+
+**Example request**
+
+```json title="JSON"
+{ "name": "Articles", "color": "#ff8800" }
+```
+
+**Example response**
+
+```json title="JSON"
+{
+  "tag": { "id": "tag_abc", "name": "Articles", "color": "#ff8800" }
+}
+```
+
+## Update tag
+
+- `PATCH /api/tags/:id` — **[Admin]**
+
+**Example request**
+
+```json title="JSON"
+{ "name": "Guides", "color": "#3b82f6" }
+```
+
+**Example response**
+
+```json title="JSON"
+{
+  "tag": { "id": "tag_abc", "name": "Guides", "color": "#3b82f6" }
+}
+```
+
+## Delete tag
+
+- `DELETE /api/tags/:id` — **[Admin]**
+
+**Example response**
+
+```json title="JSON"
+{ "ok": true, "removed": 1, "cleared": 4 }
+```

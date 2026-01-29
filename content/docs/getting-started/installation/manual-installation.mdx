@@ -1,0 +1,60 @@
+---
+title: 📦 Manual Installation
+description: Install Voux with Node.js.
+---
+
+---
+
+## Requirements
+- [git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/) 22/23
+- [npm](https://www.npmjs.com/) **(comes with Node)**
+- [fnm](https://github.com/Schniz/fnm)
+
+
+
+## Building / Running
+
+### 1. Clone the repository
+```bash title="Terminal"
+git clone https://github.com/QuintixLabs/Voux.git
+cd Voux
+```
+
+Make sure you are running Node.js 22. If you use [fnm](https://github.com/Schniz/fnm) :
+
+```bash title="Terminal"
+fnm install 22
+fnm use 22
+node -v
+```
+This should print something like: `v22.x.x`
+
+### 2. Install dependencies
+```bash title="Terminal"
+npm install
+```
+
+### 3. Create your .env file
+```bash title="Terminal"
+cp .env.example .env
+```
+<Callout title="Read this!" type="warning">
+Open `.env` and set your settings. This is where you configure your **admin login**, **site URL**, **port**, and **other options**. 
+You must set `ADMIN_USERNAME` + `ADMIN_PASSWORD` before running the server. For more settings check Configuration
+</Callout>
+
+### 4. Start Voux
+
+
+```bash title="Terminal" tab="Development"
+npm run dev
+```
+
+```bash title="Terminal" tab="Production"
+npm start
+```
+
+By default, both commands run at: http://localhost:8787. You can change this by setting the **PORT** value in `.env`
+
+During development, set `NODE_ENV=development` in your `.env` to serve **HTML/JS/CSS** with `no-store` caching.

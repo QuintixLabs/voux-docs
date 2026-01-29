@@ -1,0 +1,27 @@
+{
+  "title": "Documentation",
+  "description": "The docs app",
+  "icon": "Building",
+  "root": true,
+  "pages": [
+    "---Getting started---",
+    "index",
+    "getting-started/installation",
+    "getting-started/updating-voux",
+    "---Basics---",
+    "basics/login",
+    "basics/counters",
+    "basics/settings",
+    "basics/users",
+    "basics/data-backups",
+    "---Configuration---",
+    "configuration/environment-variables",
+    "---API---",
+    "api/overview",
+    "api/authentication",
+    "api/counters",
+    "api/tags",
+    "api/settings",
+    "api/api-keys"
+  ]
+}

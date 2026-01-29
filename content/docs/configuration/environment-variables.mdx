@@ -1,0 +1,34 @@
+---
+title: Environment Variables
+description: Configure Voux using the .env file.
+icon: SlidersHorizontal
+---
+
+---
+
+## Overview
+
+
+Voux is configured using environment variables defined in the `.env` file.
+
+Some options can be changed later from `/settings`, while others are only read when the server starts.
+
+
+| Name | Default | What it does |
+| ---- | -------- | ------------ |
+| `PORT` | `8787` | The web server port number. |
+| `PUBLIC_BASE_URL` | based on request | Lets you set a fixed site URL (like `https://counter.yourdomain.com`). |
+| `ADMIN_USERNAME` | `admin` | Username for the first admin account. |
+| `ADMIN_PASSWORD` | `change-this-password` | Password for the first admin account. |
+| `PRIVATE_MODE` | `false` | If `true`, only users can create new counters. |
+| `ADMIN_PAGE_SIZE` | `5` | How many counters show on each page in the admin panel. |
+| `USERS_PAGE_SIZE` | `4` | How many users show on each page in the users list. |
+| `SHOW_PUBLIC_GUIDES` | `true` | Controls if public guide cards are shown on the main page. |
+| `DEFAULT_ALLOWED_MODES` | `unique,unlimited` | Comma-separated list of modes to allow (`unique`, `unlimited`) for counters. You can change it later in the dashboard. |
+| `COUNTER_CREATE_LIMIT` | `5` | How many counters a single IP can create before hitting the one-minute cooldown. |
+| `COUNTER_CREATE_WINDOW_MS` | `60000` | Window length (in ms) for the above limit. Leave it alone unless you need a different window. |
+| `INACTIVE_DAYS_THRESHOLD` | `30` | Days with no hits before a counter shows an "Inactive" badge in the dashboard. |
+| `BRAND_NAME` | `Voux` | Default display name (used in titles, hero text). You can override it in `/settings`. |
+| `HOME_TITLE` | `Voux · Simple Free & Open Source Hit Counter...` | The homepage `<title>` tag value. Editable in settings. |
+| `UNLIMITED_THROTTLE_SECONDS` | `0` | Seconds to wait before counting the same IP again in "Every visit" mode. `0` disables throttling. Applies only on first boot, once `data/config.json` exists, update the throttle from `/settings` or edit that file (`config.json`) (deleting it will regenerate from `.env`). |
+| `DEV_MODE` | `development` | Use `development` in `.env` to serve HTML/JS/CSS with `no-store` caching. |

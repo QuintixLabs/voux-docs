@@ -1,0 +1,51 @@
+---
+title: Overview
+description: Learn what the Voux API is and when you should use it.
+icon: Code
+---
+
+---
+
+The **Voux API** lets you access your counters and data from outside the dashboard, 
+and all responses are returned in `JSON` format.
+
+If you only use the dashboard, you do not need the API.
+Use the API if you want to connect Voux to your own app, script, or service.
+
+
+## API endpoint
+
+The Voux API is available at the `/api` path of your instance.
+
+Example:
+- Voux instance: http://localhost:8787
+- API base: http://localhost:8787/api
+
+## Endpoint access levels
+
+As you read the documentation, some endpoints are marked with labels like `[Admin]`, `[Member]`, `[Key]`, or `[Public]`.
+
+These labels show who is allowed to access that endpoint.
+
+- **[Admin]**  
+  Requires an authenticated session.  
+  You must be logged in, either from the dashboard or by sending session cookies (for example when using **curl**).
+
+- **[Member]**  
+  Requires an authenticated session.  
+  You must be logged in as a member. Access is limited to your own counters and data.
+
+- **[Key]**  
+  Can be accessed using an API key sent in the `X-Voux-Key` header.  
+  No login or cookies are required.
+
+- **[Public]**  
+  No authentication required.  
+  Anyone can access these endpoints.
+
+In short:
+- **Admin** = logged in session (cookies)
+- **Member** = logged in member session (cookies)
+- **Key** = API key
+- **Public** = open to everyone
+

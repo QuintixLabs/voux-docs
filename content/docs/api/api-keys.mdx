@@ -1,0 +1,68 @@
+---
+title: API keys
+description: Create and manage owner API keys.
+icon: Key
+---
+
+---
+
+API keys are for scripts and automation.  
+Add the header `X-Voux-Key: <token>` to use them.
+
+## List keys
+
+- `GET /api/api-keys` — **[Admin]**
+
+**Example response**
+
+```json title="JSON"
+{
+  "keys": [
+    {
+      "id": "key_abc",
+      "name": "Deploy",
+      "scope": "global",
+      "allowed_counters": null,
+      "created_at": 1700000000000,
+      "last_used_at": null,
+      "disabled": 0
+    }
+  ]
+}
+```
+
+## Create a key
+
+- `POST /api/api-keys` — **[Admin]**
+
+**Example request**
+
+```json title="JSON"
+{ "name": "My key", "scope": "limited", "counters": ["abc123"] }
+```
+
+**Example response**
+
+```json title="JSON"
+{
+  "key": {
+    "id": "key_abc",
+    "name": "My key",
+    "scope": "limited",
+    "allowed_counters": ["abc123"]
+  },
+  "token": "voux_20ad7e943ab70023a1x9"
+}
+```
+
+Save the token right away. You won’t see it again.
+
+## Delete a key
+
+- `DELETE /api/api-keys/:id` — **[Admin]**
+
+**Example response**
+
+```json title="JSON"
+{ "ok": true }
+```

@@ -1,0 +1,50 @@
+---
+title: Data & Backups
+description: How Voux stores data and how to back it up safely.
+icon: HardDrive
+---
+
+---
+
+## Overview
+
+Voux stores all of its data locally on disk. This includes your counters, their values, notes, tags, settings, users, and activity stats.
+
+---
+
+### Full data backup
+
+If you want a complete backup of everything, copy the `data/` folder.
+
+This folder contains:
+- the SQLite database
+- the config file
+- all runtime data used by Voux
+
+Copying this folder gives you a full snapshot of your instance.
+Restoring it later will bring everything back exactly as it was.
+
+This is the **recommended option** if you care about keeping **everything**.
+
+---
+
+### JSON backups from the dashboard
+
+If you only care about counters, you can download a `JSON` backup from the dashboard.
+
+This backup includes:
+- counters
+- values
+- notes
+- labels
+- tags
+- activity stats
+
+This is useful if you want to move counters to another instance, keep a lightweight backup, or restore counters without touching users or configuration.
+
+---
+
+### Which one should I use?
+
+- Use the **full data backups** for full restores and long-term safety
+- Use **JSON backups** for sharing, migration, or quick exports

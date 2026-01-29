@@ -1,0 +1,8 @@
+{
+  "title": "Installation",
+  "icon": "Download",
+  "pages": [
+    "manual-installation",
+    "docker"
+  ]
+}

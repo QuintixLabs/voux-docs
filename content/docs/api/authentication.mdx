@@ -1,0 +1,55 @@
+---
+title: Authentication
+description: How login, sessions, and API keys work.
+icon: Shield
+---
+
+---
+
+Voux has two ways to authenticate:
+
+## 1. Session login
+
+This is what the dashboard uses.
+
+- `POST /api/login` — **[Public]**
+- If it's correct, Voux sets a session cookie in your browser.
+
+**Example request**
+
+```bash title="Terminal"
+curl -X POST http://localhost:8787/api/login \
+  -H "Content-Type: application/json" \
+  --data-raw "{\"username\":\"your-username\",\"password\":\"your-password\"}"
+```
+
+**Example response**
+
+```json title="JSON"
+{
+  "user": {
+    "id": "user_id",
+    "username": "your-username",
+    "role": "admin",
+    "displayName": "Display Name",
+    "avatarUrl": "/uploads/avatars/user_id-123456789.png",
+    "isAdmin": true,
+    "isOwner": true
+  }
+}
+```
+
+Check the session:
+
+- `GET /api/session` — **[Admin / Member]**
+
+Log out:
+
+- `POST /api/logout` — **[Admin / Member]**
+
+## 2. API keys (for scripts)
+
+Admins can make API keys in **Settings → API keys**.
+
+- Send `X-Voux-Key: <token>` in the request headers.
+- Keys can be limited to specific counters.

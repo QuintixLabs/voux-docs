@@ -1,0 +1,64 @@
+---
+title: Updating Voux
+description: Stay up to date with Voux.
+icon: Bell
+---
+
+---
+
+## Manual Installation updates
+
+This applies if you installed Voux by cloning the repository.  
+See the full guide here: [📦 Manual Installation](/docs/getting-started/installation/manual-installation)
+
+First, pull the latest changes from Git:
+
+```bash title="Terminal"
+git pull
+```
+
+Then install any new or updated dependencies:
+
+```bash title="Terminal"
+npm install
+```
+
+Finally, start the application:
+
+```bash title="Terminal" tab="Development"
+npm run dev
+```
+
+```bash title="Terminal" tab="Production"
+npm start
+```
+
+---
+
+## Docker updates
+
+This applies if you are running Voux with Docker.
+See the Docker setup here: [🐋 Docker](/docs/getting-started/installation/docker)
+
+### Docker Run
+
+Pull the latest image, then restart the container to apply the update:
+
+```bash title="Terminal"
+docker pull ghcr.io/quintixlabs/voux/voux:latest
+```
+
+### Docker Compose
+
+Update and restart the container with a single command:
+
+```bash title="Terminal"
+docker compose up -d --pull always
+```
+
+---
+
+## Recommended things to do
+
+- Watch the GitHub repo to stay updated
+- Check release notes before upgrading

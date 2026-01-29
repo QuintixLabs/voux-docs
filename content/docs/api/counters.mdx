@@ -1,0 +1,90 @@
+---
+title: Counters
+description: Create, list, update, and delete counters.
+icon: ChartColumnDecreasing
+---
+
+---
+
+## Create a counter
+
+- `POST /api/counters` — **[Public]**
+
+If the instance is in private mode, only admins and members can create counters.
+
+```json title="JSON"
+{
+  "label": "Views:",
+  "startValue": 0,
+  "mode": "unique"
+}
+```
+
+Add tags if you want:
+
+```json title="JSON"
+{ "tags": ["tag_id_here"] }
+```
+
+## List counters
+
+- `GET /api/counters` — **[Admin / Member]**
+
+- `GET /api/counters?page=1&pageSize=20&mode=unique&tags=tagA&sort=views`
+
+- `mode`: `unique` or `unlimited`
+- `tags`: repeat the param to filter by multiple tags
+- `sort`: `newest`, `oldest`, `views`, `views_asc`, `last_hit`
+
+## Get one counter
+
+- `GET /api/counters/:id` — **[Public]**
+
+Returns the counter info and embed snippet **(notes are hidden)**.
+
+## Update a counter
+
+- `PATCH /api/counters/:id` — **[Admin / Member / Key]**
+
+```json title="JSON"
+{
+  "label": "New label",
+  "value": 42,
+  "note": "private note",
+  "tags": ["tag_id_here"]
+}
+```
+
+## Set value only
+
+- `POST /api/counters/:id/value` — **[Admin / Member / Key]**
+
+```json title="JSON"
+{ "value": 120 }
+```
+
+## Delete
+
+- `DELETE /api/counters/:id` — **[Admin / Member / Key]**
+- `DELETE /api/counters?mode=unique` — **[Admin / Member]**
+- `DELETE /api/counters` — **[Admin / Member]**
+
+## Bulk delete
+
+- `POST /api/counters/bulk-delete` — **[Admin / Member / Key]**
+
+```json title="JSON"
+{ "ids": ["abc123", "def456"] }
+```
+
+## Export / import
+
+- `GET /api/counters/export` — **[Admin / Member]**
+- `POST /api/counters/export-selected` — **[Admin / Member]**
+- `POST /api/counters/import` — **[Admin / Member]**
+
+## Embed script
+
+- `GET /embed/:id.js` — **[Public]**
+
+Drop the script into your site to show the counter.
