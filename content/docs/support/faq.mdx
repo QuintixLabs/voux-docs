@@ -1,0 +1,61 @@
+---
+title: FAQ
+description: Common questions around Voux.
+icon: CircleQuestionMark
+---
+
+---
+
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+
+
+<Accordions type="single">
+  <Accordion title="What is Voux used for?">
+    Voux is a self-hosted view counter with a small analytics dashboard. It is meant for tracking page views without heavy analytics.
+  </Accordion>
+
+  <Accordion title="How does Voux count views?">
+    Voux supports two counting modes.  
+&bull; **Unique** uses the visitor **IP** to avoid duplicate hits.  
+&bull; **Every-visit** counts every request, including page refreshes, and does not use **IPs**.
+  </Accordion>
+
+  <Accordion title="What is the difference between Unique and Every-visit counters?">
+&bull; **Unique counters** use the visitor **IP** to avoid counting repeated views.  
+&bull; **Every-visit counters** count every request, including refreshes, and **do not** use **IPs**.
+  </Accordion>
+
+  <Accordion title="Does Voux use cookies or track users across sites?">
+    **No.** Voux does not use cookies or cross-site tracking. It only tracks views per counter.
+  </Accordion>
+
+  <Accordion title="Is Voux self-hosted only?">
+    **Yes.** Voux is fully self-hosted. You run it on your own server.
+  </Accordion>
+
+  <Accordion title="What kind of analytics does Voux provide?">
+    Voux provides basic analytics related to views, such as counts and simple breakdowns. It is not meant to replace full analytics platforms.
+  </Accordion>
+
+  <Accordion title="Can I use Voux on multiple websites?">
+    **Yes.** You can create multiple counters and use them across different websites or pages.
+  </Accordion>
+
+  <Accordion title="Where is Voux data stored?">
+    All data is stored locally on your server in Voux's database.
+  </Accordion>
+
+  <Accordion title="What happens if my server goes down?">
+    Views are not counted while the server is offline. Once it is back up, everything continues normally.
+  </Accordion>
+
+  <Accordion title="Is there an API available?">
+    **Yes.** Voux includes an **API** that lets you manage counters and access view data.
+  </Accordion>
+</Accordions>
+
+
+
+
+{/* i feel like this looks better */}
+&nbsp;

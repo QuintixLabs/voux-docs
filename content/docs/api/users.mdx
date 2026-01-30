@@ -1,0 +1,115 @@
+---
+title: Users
+description: Manage accounts on your instance.
+icon: UserPen
+---
+
+---
+
+All user endpoints are admin-only.
+
+## List users
+
+- `GET /api/users` — **[Admin]**
+
+**Example response**
+
+```json
+{
+  "users": [
+    {
+      "id": "user_abc",
+      "username": "user",
+      "role": "admin",
+      "displayName": "Frost",
+      "avatarUrl": "/uploads/avatars/user_abc-123.png",
+      "isOwner": true
+    },
+    {
+      "id": "user_xyz",
+      "username": "alice",
+      "role": "user",
+      "displayName": "Alice",
+      "avatarUrl": "",
+      "isOwner": false
+    }
+  ]
+}
+```
+
+## Create user
+
+- `POST /api/users` — **[Admin]**
+
+**Example request**
+
+```json
+{
+  "username": "alice",
+  "password": "change-me",
+  "role": "user",
+  "displayName": "Alice"
+}
+```
+
+**Example response**
+
+```json
+{
+  "user": {
+    "id": "user_xyz",
+    "username": "alice",
+    "role": "user",
+    "displayName": "Alice",
+    "avatarUrl": ""
+  }
+}
+```
+
+## Update user
+
+- `PATCH /api/users/:id` — **[Admin]**
+
+**Example request**
+
+```json
+{
+  "role": "admin",
+  "displayName": "Alice B",
+  "password": "new-password"
+}
+```
+
+**Example response**
+
+```json
+{
+  "user": {
+    "id": "user_xyz",
+    "username": "alice",
+    "role": "admin",
+    "displayName": "Alice B",
+    "avatarUrl": ""
+  }
+}
+```
+
+## Delete user
+
+- `DELETE /api/users/:id` — **[Admin]**
+
+**Example response**
+
+```json
+{ "ok": true }
+```
+
+## Rules
+
+- Only the **owner** can edit or delete admins.
+- Admins can manage **members** (role `user`).
+- You cannot delete your own account.
+- You can't delete the last admin.
+
+{/* i feel like this looks better */}
+&nbsp;

@@ -22,6 +22,11 @@
     "api/counters",
     "api/tags",
     "api/settings",
-    "api/api-keys"
+    "api/api-keys",
+    "api/users",
+    "---Support---",
+    "support/faq",
+    "support/license",
+    "support/donate"
   ]
 }
