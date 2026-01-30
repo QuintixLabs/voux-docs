@@ -16,7 +16,7 @@ const __dirname = dirname(__filename);
 const fontPath = join(__dirname, './Geist-Bold.woff');
 
 const foreground = '#ffffff';
-const mutedForeground = '#a1a1a1';
+const mutedForeground = '#3b82f6';
 const background = '#0f1115';
 
 interface GenerateOptions {
@@ -54,8 +54,21 @@ function generate({ title, description, siteUrl }: GenerateOptions): ReactElemen
 
       <div tw="flex flex-row justify-between items-center mt-auto p-8">
         <div tw="flex flex-row items-center">
-          <img src={logoUrl} width={48} height={48} alt="Voux" />
-          <p tw="text-4xl font-medium pl-4">Voux</p>
+          <svg
+            width="58"
+            height="58"
+            viewBox="0 0 512 512"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d="M255.999 354.595C331.71 354.595 397.406 306.398 430.114 277.362C443.292 265.662 443.292 246.113 430.114 234.413C397.406 205.377 331.71 157.18 255.999 157.18C180.287 157.18 114.592 205.377 81.8838 234.413C68.7054 246.113 68.7054 265.662 81.8838 277.362C114.592 306.398 180.287 354.595 255.999 354.595ZM255.999 324.753C294.241 324.753 325.241 293.921 325.241 255.887C325.241 217.854 294.241 187.022 255.999 187.022C217.758 187.022 186.757 217.854 186.757 255.887C186.757 293.921 217.758 324.753 255.999 324.753Z"
+              fill={foreground}
+            />
+          </svg>
+          <p tw="text-4xl font-medium pl-3">Voux</p>
         </div>
         <p tw="text-4xl font-medium" style={{ color: mutedForeground }}>
           Documentation
